@@ -14,6 +14,10 @@ from utils.exception import CustomException
 from utils.logger import logging
 
 class ModelTrainingComponent:
+    """
+    A component responsible for training machine learning models using configuration settings
+    and saving the trained model.
+    """
     def __init__(self,data: pd.DataFrame, 
                  config_file: Dict[str, Any]) -> None:
         self.data = data
@@ -21,6 +25,14 @@ class ModelTrainingComponent:
 
 
     def get_model_config(self):
+        """
+        Retrieves the model training configuration from the configuration file.
+
+        Returns:
+        -------
+        dict:
+            Configuration dictionary containing model parameters, test size, target, and classifier type.
+        """
         try:
             logging.info("getting model configuration")
             model_config = self.config.model_training
@@ -28,8 +40,25 @@ class ModelTrainingComponent:
             return model_config
         except Exception as e:
             raise CustomException(e,sys)
-        
+
+
     def train_model(self, model_config :Dict[str, Any]):
+        """
+        Trains the specified model based on the configuration, 
+        evaluates it using train/test splits,
+        and saves the trained model as a pickle file.
+
+        Parameters:
+        ----------
+        model_config : dict
+            Configuration dictionary containing model parameters such as
+            param_grid, test size, classifier type, etc.
+
+        Returns:
+        -------
+        None
+        """
+            
         try:
             # extract all model configs
             param = model_config.param_grid

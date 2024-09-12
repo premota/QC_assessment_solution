@@ -9,6 +9,10 @@ from model_trainer.Components.model_training import ModelTrainingComponent
 
 
 class TrainModel():
+    """
+    A pipeline class that orchestrates the entire process of data ingestion, cleaning, transformation,
+    and model training using the specified configuration file.
+    """
     try:
         config_path = Path("model_trainer/training_config.yaml")
 

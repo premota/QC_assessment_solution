@@ -1,3 +1,9 @@
+"""
+This script sets up logging for an application. 
+It creates a unique log directory based on the current timestamp 
+and configures logging to write both to a log file and to the console.
+"""
+
 import logging
 import os
 from datetime import datetime

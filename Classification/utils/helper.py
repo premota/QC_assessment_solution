@@ -11,6 +11,19 @@ from utils.exception import CustomException
 
 
 def read_yaml(path: Path) -> Box:
+    """
+    Reads a YAML file and returns its content as a Box object.
+
+    Parameters:
+    ----------
+    path : Path
+        The file path of the YAML configuration file.
+
+    Returns:
+    -------
+    Box:
+        A Box object containing the parsed data from the YAML file.
+    """
     try:
         with open(path) as file:
             data = yaml.safe_load(file)
@@ -20,6 +33,20 @@ def read_yaml(path: Path) -> Box:
 
 
 def save_to_pickle(obj_path: Path, obj):
+    """
+    Saves a Python object as a pickle file at the specified path.
+
+    Parameters:
+    ----------
+    obj_path : Path
+        The path where the pickle file will be saved.
+    obj : object
+        The Python object to be serialized and saved.
+
+    Returns:
+    -------
+    None
+    """
     try:
         # first create folder if absent
         dir_path = os.path.dirname(obj_path)

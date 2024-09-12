@@ -12,13 +12,28 @@ import sys
 
 
 class DataTransformationComponent:
+    """
+    A component responsible for performing data transformations including 
+    data type conversions,separating numerical and categorical features, 
+    and applying transformations.
+    """
     def __init__(self, data: pd.DataFrame, 
                  config_file: Dict[str, Any]) -> None:
         
         self.data = data
         self.config_file = read_yaml(config_file)
 
+
     def get_transformation_config(self):
+        """
+        Retrieves the transformation configuration from the YAML file.
+
+        Returns:
+        -------
+        dict:
+            A dictionary containing the transformation settings, such as columns 
+            and target feature.
+        """
         try:
             logging.info("getting transformation config")
             transformation_config = self.config_file.data_transformation
@@ -27,7 +42,21 @@ class DataTransformationComponent:
         except Exception as e:
             raise CustomException(e,sys)
 
+
     def convert_data_type(self, data_transformation_config: Dict[str, Any]):
+        """
+        Converts nominal categorical columns to the appropriate data type.
+
+        Parameters:
+        ----------
+        data_transformation_config : dict
+            Configuration dictionary containing details about nominal columns.
+
+        Returns:
+        -------
+        pd.DataFrame:
+            The updated DataFrame with nominal columns converted to object type.
+        """
         try:
             logging.info("converting nominal categorical columns to the right datatype")
             nominal_columns = data_transformation_config.nominal_columns
@@ -38,7 +67,25 @@ class DataTransformationComponent:
         except Exception as e:
             raise CustomException(e,sys)
         
+
     def transform_data(self,dataframe, data_transformation_config: Dict[str, Any]):
+        """
+        Transforms the data by applying numerical and categorical transformers 
+        (e.g., scaling, one_hot_encoding).
+
+        Parameters:
+        ----------
+        dataframe : pd.DataFrame
+            The DataFrame that contains the features to be transformed.
+        data_transformation_config : dict
+            The configuration for data transformation, including the target column 
+            and the location to save the transformer.
+
+        Returns:
+        -------
+        pd.DataFrame:
+            A transformed DataFrame with numerical and categorical features processed.
+        """
         try:
             # extract target feature and location to save transformer object from config
             target = data_transformation_config.target
@@ -46,7 +93,7 @@ class DataTransformationComponent:
 
 
             df = dataframe.drop([target], axis =1)
-            
+            #seoarate numerical and categorical data
             logging.info("separating numerical and categorical data")
             numerical_features = df.select_dtypes(exclude = "object").columns.to_list()
             categorical_features = df.select_dtypes(include = "object").columns.to_list()
