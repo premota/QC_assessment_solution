@@ -1,0 +1,8 @@
+data_ingestion:
+  source_dir: "artifacts/Clean_data.csv"
+  
+data_cleaning:
+  outlier_columns:
+    - "Duration of Credit (month)"
+    - "Credit Amount" 
+    - "Age"
