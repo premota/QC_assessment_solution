@@ -19,3 +19,11 @@ data_transformation:
 
   target: "label"
   transformer_pickle: "artifacts/data_transfomer/transformer.pkl"
+
+model_training:
+  param_grid: {}
+  test_size : 0.3
+  target: "label"
+  random_state : 42
+  classifier : 'Logistics Regression'
+  model_artifact_dir: "artifacts/model/model.pkl"
