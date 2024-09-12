@@ -6,3 +6,16 @@ data_cleaning:
     - "Duration of Credit (month)"
     - "Credit Amount" 
     - "Age"
+
+data_transformation:
+  nominal_columns:
+    - "Account type"
+    - "Purpose"
+    - "Savings type"
+    - "Type of apartment"
+    - "Marital Status"
+    - "Occupation"
+    - "Foreign Worker"
+
+  target: "label"
+  transformer_pickle: "artifacts/data_transfomer/transformer.pkl"

@@ -38,7 +38,8 @@ class DataIngestionComponent:
             raise CustomException(e,sys)
 
 
-from model_trainer.Components.data_cleaning import DataCleaningComponent       
+from model_trainer.Components.data_cleaning import DataCleaningComponent 
+from model_trainer.Components.data_transformation import DataTransformationComponent      
 if __name__ == "__main__":
     
     try:
@@ -53,5 +54,23 @@ if __name__ == "__main__":
         cleaning_obj = DataCleaningComponent(data=data, config_file=config_path)
         outlier_config = cleaning_obj.get_cleaning_config()
         clean_df = cleaning_obj.remove_outliers(outlier_config)
+
+        # data transformation
+        transform_obj = DataTransformationComponent(data=clean_df, config_file=config_path)
+        transform_config = transform_obj.get_transformation_config()
+        transformed_df = transform_obj.convert_data_type(transform_config)
+        transformed_df = transform_obj.transform_data(transformed_df,transform_config)
     except Exception as e:
         raise CustomException(e,sys)
+
+
+
+
+
+
+
+
+
+
+
+
