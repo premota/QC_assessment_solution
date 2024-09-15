@@ -27,3 +27,4 @@ model_training:
   random_state : 42
   classifier : 'Logistics Regression'
   model_artifact_dir: "artifacts/model/model.pkl"
+

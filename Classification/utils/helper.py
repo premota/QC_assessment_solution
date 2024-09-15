@@ -53,7 +53,29 @@ def save_to_pickle(obj_path: Path, obj):
         os.makedirs(dir_path, exist_ok=True)
 
         # create pickle
-        with open(obj_path, "wb") as file:
+        with open(obj_path, 'wb') as file:
             pickle.dump(obj, file)
+    except Exception as e:
+        raise CustomException(e,sys)
+    
+    
+def load_pickle(object_path:Path):
+    """
+    Loads a Pickle object at the specified path.
+
+    Parameters:
+    ----------
+    obj_path : Path
+        The path where the pickle file has beeen saved.
+    obj : object
+        The Pickle object to be extracted.
+
+    Returns:
+    -------
+    None
+    """
+    try:
+        with open(object_path, 'rb') as file:
+            return pickle.load(file)
     except Exception as e:
         raise CustomException(e,sys)

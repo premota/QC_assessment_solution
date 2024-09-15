@@ -1,0 +1,11 @@
+prediction:
+  transformer_pickle_dir: "artifacts/data_transfomer/transformer.pkl"
+  model_artifact_dir: "artifacts/model/model.pkl"
+  nominal_columns:
+    - "Account type"
+    - "Purpose"
+    - "Savings type"
+    - "Type of apartment"
+    - "Marital Status"
+    - "Occupation"
+    - "Foreign Worker"
