@@ -1,39 +1,7 @@
 # Project: Classification Machine Learning Pipeline
 
 ## Folder Structure
-Classification
-├── artifacts
-│   ├── clean_data.csv
-│   ├── classification_data.csv
-│   ├── data_transformer
-│   │   └── transformer.pkl
-│   └── model
-│       └── model.pkl
-├── model_prediction
-│   ├── prediction_config.yaml
-│   └── prediction_pipeline.py
-├── model_trainer
-│   ├── components
-│   │   ├── data_cleaning.py
-│   │   ├── data_ingestion.py
-│   │   ├── data_transformation.py
-│   │   └── model_training.py
-│   ├── pipelines
-│   │   └── training_pipeline.py
-│   └── training_config.yaml
-├── notebook
-│   ├── data_cleaning.ipynb
-│   ├── EDA.ipynb
-│   └── modeling.ipynb
-├── utils
-│   ├── exception.py
-│   ├── helper.py
-│   └── logger.py
-├── app.py
-├── README.md
-├── requirements.txt
-└── setup.py
-
+Classification/ ├── artifacts/ │ ├── clean_data.csv │ ├── classification_data.csv │ ├── data_transformer/ │ │ └── transformer.pkl │ └── model/ │ └── model.pkl ├── model_prediction/ │ ├── prediction_config.yaml │ └── prediction_pipeline.py ├── model_trainer/ │ ├── components/ │ │ ├── data_cleaning.py │ │ ├── data_ingestion.py │ │ ├── data_transformation.py │ │ └── model_training.py │ ├── pipelines/ │ │ └── training_pipeline.py │ └── training_config.yaml ├── notebook/ │ ├── data_cleaning.ipynb │ ├── EDA.ipynb │ └── modeling.ipynb ├── utils/ │ ├── exception.py │ ├── helper.py │ └── logger.py ├── app.py ├── README.md ├── requirements.txt └── setup.py
 
 ## Overview
 This project focuses on building a machine learning classification model using Python. The goal is to predict outcomes based on a labeled dataset through a series of data processing steps and model training. Initially, experimentation was performed in Jupyter notebooks, and once the process was refined, the project was broken down into modular scripts. This enabled the creation of a structured pipeline for model training and inference, making it easier to manage and deploy.
