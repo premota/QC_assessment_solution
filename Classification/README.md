@@ -34,6 +34,7 @@ Classification/
 ├── README.md
 ├── requirements.txt
 └── setup.py
+```
 
 ## Overview
 This project focuses on building a machine learning classification model using Python. The goal is to predict outcomes based on a labeled dataset through a series of data processing steps and model training. Initially, experimentation was performed in Jupyter notebooks, and once the process was refined, the project was broken down into modular scripts. This enabled the creation of a structured pipeline for model training and inference, making it easier to manage and deploy.
