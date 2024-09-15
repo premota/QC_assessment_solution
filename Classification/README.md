@@ -58,7 +58,7 @@ This project focuses on building a machine learning classification model using P
 
 
 ### Technologies Used
-Python: For scripting the model, data processing, and pipeline automation.
-Jupyter Notebooks: For initial experimentation and exploration.
-YAML Configurations: To make the pipeline processes flexible and easy to adjust.
-Pickle Files: To save and load trained models and transformers.
+- Python: For scripting the model, data processing, and pipeline automation.
+- Jupyter Notebooks: For initial experimentation and exploration.
+- YAML Configurations: To make the pipeline processes flexible and easy to adjust.
+- Pickle Files: To save and load trained models and transformers.
