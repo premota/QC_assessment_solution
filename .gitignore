@@ -6,6 +6,9 @@ __pycache__/
 # C extensions
 *.so
 
+# venv/
+quick_check_venv/
+
 # Distribution / packaging
 .Python
 build/
