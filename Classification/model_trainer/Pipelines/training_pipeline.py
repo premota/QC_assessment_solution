@@ -1,5 +1,5 @@
 from pathlib import Path
-import sys
+
 
 from utils.exception import CustomException
 from model_trainer.Components.data_ingestion import DataIngestionComponent
